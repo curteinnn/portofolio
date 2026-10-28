@@ -1,0 +1,76 @@
+/* Responsive breakpoints live here so viewport-specific behavior stays centralized. */
+
+@media (max-width: 1024px) {
+  .editorial-title { font-size: clamp(58px, 12vw, 150px); }
+  .editorial-description { width: min(310px, 38vw); }
+  .portfolio-editorial--stage-light .editorial-title { font-size: clamp(48px, 9vw, 120px); }
+}
+
+@media (max-width: 700px) {
+  .scene-editor {
+    top: max(10px, env(safe-area-inset-top));
+    right: max(10px, env(safe-area-inset-right));
+    width: min(330px, calc(100vw - 20px));
+    max-height: calc(100dvh - 20px - env(safe-area-inset-top));
+    padding: 14px;
+  }
+
+  .editorial-close {
+    top: max(12px, env(safe-area-inset-top));
+    right: max(16px, env(safe-area-inset-right));
+  }
+  .editorial-kicker { top: 19%; left: 7%; max-width: 70vw; font-size: 8px; }
+  .editorial-title { top: 25%; left: 6%; max-width: 88vw; font-size: clamp(52px, 16vw, 108px); }
+  .editorial-description { top: auto; bottom: calc(21% + env(safe-area-inset-bottom)); left: 8%; width: 80vw; max-width: 440px; font-size: 14px; }
+  .editorial-note { right: 8%; bottom: max(7%, calc(7% + env(safe-area-inset-bottom))); max-width: 75vw; font-size: 8px; }
+  .editorial-index { top: 12%; right: 7%; font-size: 35vw; }
+  .editorial-orbit { top: 10%; right: 7%; width: 48vw; }
+
+  .portfolio-editorial--microphone .editorial-kicker { top: 17%; right: 7%; }
+  .portfolio-editorial--microphone .editorial-title { top: 24%; right: 6%; max-width: 90vw; }
+  .portfolio-editorial--microphone .editorial-description { top: auto; right: 8%; bottom: calc(21% + env(safe-area-inset-bottom)); width: 80vw; }
+  .portfolio-editorial--microphone .editorial-note { left: 8%; bottom: max(7%, calc(7% + env(safe-area-inset-bottom))); }
+
+  .portfolio-editorial--speaker .editorial-kicker { top: 18%; }
+  .portfolio-editorial--speaker .editorial-title { top: 29%; max-width: 90vw; font-size: clamp(56px, 16vw, 108px); }
+  .portfolio-editorial--speaker .editorial-description { top: auto; bottom: calc(21% + env(safe-area-inset-bottom)); width: 82vw; }
+  .portfolio-editorial--speaker .editorial-note { bottom: max(7%, calc(7% + env(safe-area-inset-bottom))); }
+  .portfolio-editorial--speaker .editorial-orbit { top: 23%; width: 75vw; }
+
+  .portfolio-editorial--amplifier .editorial-kicker { top: auto; bottom: 43%; left: 8%; }
+  .portfolio-editorial--amplifier .editorial-title { top: 20%; left: 7%; }
+  .portfolio-editorial--amplifier .editorial-description { right: 8%; bottom: calc(20% + env(safe-area-inset-bottom)); width: 80vw; }
+  .portfolio-editorial--amplifier .editorial-note { left: 8%; bottom: max(7%, calc(7% + env(safe-area-inset-bottom))); max-width: 75vw; }
+
+  .portfolio-editorial--stage-light .editorial-kicker { top: 19%; left: 8%; }
+  .portfolio-editorial--stage-light .editorial-title { top: 27%; left: 7%; max-width: 86vw; font-size: clamp(44px, 12vw, 90px); }
+  .portfolio-editorial--stage-light .editorial-description { bottom: calc(21% + env(safe-area-inset-bottom)); left: 8%; width: 80vw; }
+  .portfolio-editorial--stage-light .editorial-note { right: 8%; bottom: max(7%, calc(7% + env(safe-area-inset-bottom))); }
+}
+
+@media (max-width: 380px) {
+  .editorial-title { font-size: clamp(48px, 15vw, 58px); }
+  .portfolio-editorial--speaker .editorial-title { font-size: clamp(50px, 15vw, 58px); }
+  .portfolio-editorial--stage-light .editorial-title { font-size: 44px; }
+  .editorial-description { width: 84vw; font-size: 13px; }
+  .portfolio-editorial--microphone .editorial-description,
+  .portfolio-editorial--speaker .editorial-description,
+  .portfolio-editorial--amplifier .editorial-description,
+  .portfolio-editorial--stage-light .editorial-description { width: 84vw; }
+}
+
+@media (max-height: 620px) and (min-width: 701px) {
+  .editorial-kicker { top: 10%; }
+  .editorial-title { top: 19%; font-size: clamp(56px, 10vw, 130px); }
+  .editorial-description { top: 58%; max-height: 30vh; overflow-y: auto; }
+  .editorial-note { bottom: 8%; }
+  .editorial-orbit { width: min(24vw, 260px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .click-here-marker,
+  .click-here-marker__dot::after,
+  .scene-load-indicator { animation-duration: 0.01ms; animation-iteration-count: 1; }
+  .scene-load-progress span.is-indeterminate { animation: none; }
+  .scene-load-progress span { transition: none; }
+}
